@@ -3,9 +3,9 @@ import { createTheme } from '@mui/material/styles';
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#730a3d',
-      light: '#9b0f52',
-      dark: '#330033',
+      main: '#BE5985',
+      light: '#f8f4f4',
+      dark: '#EC7FA9',
     },
     secondary: {
       main: '#ffffff',
@@ -30,7 +30,7 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: '#ffffff',
-          color: '#730a3d',
+          color: 'primary.main',
         },
       },
     },

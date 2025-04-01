@@ -5,6 +5,7 @@ import SuccessStories from './SuccessStories';
 import SearchSection from './SearchSection';
 import ResultsSection from './ResultsSection';
 import Navbar from './Navbar';
+import Footer  from './Footer';
 
 const LandingPage = () => {
   const [searchCriteria, setSearchCriteria] = useState(null);
@@ -20,13 +21,13 @@ const LandingPage = () => {
       <Navbar />
       <Box sx={{ 
         width: '100%',
-        position: 'relative',
+        position: 'absolute',
       }}>
         <HeroSection />
         <SuccessStories />
         <SearchSection onSearch={handleSearchComplete} />
         <ResultsSection onSearch={handleSearchComplete} />
-
+        <Footer />
         {showResults && <ResultsSection searchCriteria={searchCriteria} />}
       </Box>
     </Box>

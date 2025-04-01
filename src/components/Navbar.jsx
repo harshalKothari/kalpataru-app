@@ -55,7 +55,7 @@ const Navbar = () => {
     <AppBar 
       position="fixed" 
       sx={{
-        bgcolor: isLandingPage && !isScrolled ? 'transparent' : '#730a3d',
+        bgcolor: isLandingPage && !isScrolled ? 'transparent' : 'primary.main',
         boxShadow: isLandingPage && !isScrolled ? 'none' : 1,
         transition: 'all 0.3s ease',
       }}
@@ -91,7 +91,7 @@ const Navbar = () => {
                   mx: 1,
                   px: 2,
                   '&:hover': {
-                    bgcolor: '#4CAF50',
+                    bgcolor: 'primary.dark',
                   },
                   transition: 'all 0.3s ease'
                 }}
@@ -120,7 +120,7 @@ const Navbar = () => {
         PaperProps={{
           sx: {
             width: 250,
-            bgcolor: '#730a3d',
+            bgcolor: '#EA738D',
             color: 'white'
           }
         }}
@@ -132,7 +132,7 @@ const Navbar = () => {
               onClick={() => handleNavigation(item.path)}
               sx={{
                 '&:hover': {
-                  bgcolor: '#4CAF50',
+                  bgcolor: 'primary.dark',
                 },
                 transition: 'all 0.3s ease',
                 mx: 1,

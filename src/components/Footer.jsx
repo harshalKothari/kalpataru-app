@@ -28,8 +28,8 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        bgcolor: 'primary.main',
-        color: 'white',
+        bgcolor: 'primary.light',
+        color: 'black',
         py: 6,
         mt: 'auto',
       }}
@@ -38,7 +38,7 @@ const Footer = () => {
         <Grid container spacing={4}>
           {/* Company Description */}
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+            <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
               About Our Company
             </Typography>
             <Typography variant="body2" sx={{ mb: 2 }}>
@@ -68,7 +68,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+            <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
               Quick Links
             </Typography>
             <Link href="/" color="inherit" sx={{ display: 'block', mb: 1 }}>
@@ -90,7 +90,7 @@ const Footer = () => {
 
           {/* Email Inquiry Section */}
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+            <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
               Stay Connected
             </Typography>
             <Typography variant="body2" sx={{ mb: 2 }}>
@@ -136,18 +136,19 @@ const Footer = () => {
           </Grid>
         </Grid>
 
-        <Divider sx={{ my: 4, bgcolor: 'rgba(255, 255, 255, 0.1)' }} />
+        <Divider sx={{ my: 4, bgcolor: 'primary.main' }} />
         
         {/* Copyright Section */}
         <Typography 
           variant="body2" 
           align="center"
           sx={{ 
-            pt: 2,
-            opacity: 0.8
+            pt: 0.1,
+            opacity: 0.8,
+            bgcolor: 'primary.light',
           }}
         >
-          © {currentYear} Your Company Name. All rights reserved.
+          © {currentYear} RiJi Creations. All rights reserved.
         </Typography>
       </Container>
     </Box>

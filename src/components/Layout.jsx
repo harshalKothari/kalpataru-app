@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
     <Box sx={{ 
       display: 'flex', 
       flexDirection: 'column',
-      minHeight: '100vh'
+      minHeight: '100vh',
     }}>
       <Navbar />
       <Box sx={{ 
@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
       }}>
         {children}
       </Box>
-      <Footer />
+      
     </Box>
   );
 };

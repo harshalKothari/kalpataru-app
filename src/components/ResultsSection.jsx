@@ -26,7 +26,7 @@ import { useNavigate } from 'react-router-dom';
 // Styled components for table
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: '#730a3d',
+    backgroundColor: 'primary.main',
     color: theme.palette.common.white,
     fontWeight: 'bold',
   },
@@ -106,7 +106,7 @@ const ResultsSection = ({ searchCriteria }) => {
         <Typography
           variant="h4"
           sx={{
-            color: '#730a3d',
+            color: 'primary.main',
             fontWeight: 'bold',
             mb: 3,
           }}
@@ -121,7 +121,7 @@ const ResultsSection = ({ searchCriteria }) => {
               label={`Gender: ${searchCriteria.gender}`}
               onDelete={() => {}}
               sx={{
-                bgcolor: '#730a3d',
+                bgcolor: 'primary.main',
                 color: 'white',
                 '& .MuiChip-deleteIcon': {
                   color: 'white',
@@ -134,7 +134,7 @@ const ResultsSection = ({ searchCriteria }) => {
               label={`Age: ${searchCriteria.age[0]}-${searchCriteria.age[1]}`}
               onDelete={() => {}}
               sx={{
-                bgcolor: '#730a3d',
+                bgcolor: 'primary.main',
                 color: 'white',
                 '& .MuiChip-deleteIcon': {
                   color: 'white',
@@ -147,7 +147,7 @@ const ResultsSection = ({ searchCriteria }) => {
               label={`City: ${searchCriteria.city}`}
               onDelete={() => {}}
               sx={{
-                bgcolor: '#730a3d',
+                bgcolor: 'primary.main',
                 color: 'white',
                 '& .MuiChip-deleteIcon': {
                   color: 'white',
@@ -195,7 +195,7 @@ const ResultsSection = ({ searchCriteria }) => {
                       <Chip
                         label={row.isOnline ? 'Online' : 'Offline'}
                         sx={{
-                          bgcolor: row.isOnline ? '#4CAF50' : '#grey',
+                          bgcolor: row.isOnline ? 'primary.dark' : '#grey',
                           color: 'white',
                         }}
                         size="small"
@@ -206,7 +206,7 @@ const ResultsSection = ({ searchCriteria }) => {
                         <IconButton
                           onClick={() => handleViewProfile(row.id)}
                           sx={{ 
-                            color: '#730a3d',
+                            color: 'primary.main',
                             '&:hover': { bgcolor: 'rgba(115, 10, 61, 0.08)' }
                           }}
                         >
@@ -215,7 +215,7 @@ const ResultsSection = ({ searchCriteria }) => {
                         <IconButton
                           onClick={() => handleSendMessage(row.id)}
                           sx={{ 
-                            color: '#730a3d',
+                            color: 'primary.main',
                             '&:hover': { bgcolor: 'rgba(115, 10, 61, 0.08)' }
                           }}
                         >
@@ -224,7 +224,7 @@ const ResultsSection = ({ searchCriteria }) => {
                         <IconButton
                           onClick={() => handleAddToFavorites(row.id)}
                           sx={{ 
-                            color: '#730a3d',
+                            color: 'primary.main',
                             '&:hover': { bgcolor: 'rgba(115, 10, 61, 0.08)' }
                           }}
                         >
@@ -246,7 +246,7 @@ const ResultsSection = ({ searchCriteria }) => {
             onRowsPerPageChange={handleChangeRowsPerPage}
             sx={{
               '.MuiTablePagination-select': {
-                color: '#730a3d',
+                color: 'primary.main',
               },
             }}
           />

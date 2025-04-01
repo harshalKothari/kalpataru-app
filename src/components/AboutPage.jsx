@@ -9,7 +9,7 @@ const AboutPage = () => {
           variant="h2"
           align="center"
           sx={{
-            color: '#730a3d',
+            color: 'primary.main',
             fontWeight: 'bold',
             mb: 6
           }}
@@ -19,7 +19,7 @@ const AboutPage = () => {
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <Paper elevation={3} sx={{ p: 4 }}>
-              <Typography variant="h5" gutterBottom sx={{ color: '#730a3d' }}>
+              <Typography variant="h5" gutterBottom sx={{ color: 'primary.main' }}>
                 Our Mission
               </Typography>
               <Typography paragraph>
@@ -31,7 +31,7 @@ const AboutPage = () => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Paper elevation={3} sx={{ p: 4 }}>
-              <Typography variant="h5" gutterBottom sx={{ color: '#730a3d' }}>
+              <Typography variant="h5" gutterBottom sx={{ color: 'primary.main' }}>
                 Our Vision
               </Typography>
               <Typography paragraph>

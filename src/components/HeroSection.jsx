@@ -39,7 +39,7 @@ const HeroSection = () => {
                 }}
         navButtonsProps={{
           style: {
-            backgroundColor: '#730a3d',
+            backgroundColor: 'primary.main',
             opacity: 0.7,
                     '&:hover': {
               opacity: 0.9,
@@ -57,7 +57,7 @@ const HeroSection = () => {
           style: {
             color: '#ffffff',
             '&.Mui-selected': {
-              color: '#730a3d'
+              color: 'primary.main'
             }
           }
         }}
@@ -68,7 +68,7 @@ const HeroSection = () => {
             sx={{
               height: '100vh',
               width: '100%',
-              position: 'relative',
+              position: 'absolute',
               backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${item.image})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
@@ -123,9 +123,9 @@ const HeroSection = () => {
                   variant="contained"
                   size="large"
                   sx={{
-                    bgcolor: '#730a3d',
+                    bgcolor: 'primary.main',
                     '&:hover': {
-                      bgcolor: '#4CAF50',
+                      bgcolor: 'primary.dark',
                     },
                     px: 4,
                     py: 1.5,

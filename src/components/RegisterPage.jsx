@@ -107,7 +107,7 @@ const RegisterPage = () => {
     <PageContainer>
       <Container>
         <StyledPaper elevation={3}>
-          <Typography component="h1" variant="h4" gutterBottom sx={{ fontWeight: 600, textAlign: 'center' }}>
+          <Typography component="h1" variant="h4" gutterBottom sx={{ fontWeight: 600, textAlign: 'center',color: 'primary.main' }}>
             Create Your Profile
           </Typography>
 
@@ -117,12 +117,12 @@ const RegisterPage = () => {
 
           <Grid container spacing={2} sx={{ mb: 3 }}>
             <Grid item xs={12} sm={6}>
-              <SocialButton startIcon={<Google sx={{ color: '#730a3d' }} />}>
+              <SocialButton startIcon={<Google sx={{ color: 'primary.main' }} />}>
                 Sign up with Google
               </SocialButton>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <SocialButton startIcon={<Facebook sx={{ color: '#730a3d' }} />}>
+              <SocialButton startIcon={<Facebook sx={{ color: 'primary.main' }} />}>
                 Sign up with Facebook
               </SocialButton>
             </Grid>
@@ -141,7 +141,7 @@ const RegisterPage = () => {
                   value={formData.firstName}
                   onChange={handleChange}
                   InputProps={{
-                    startAdornment: <Person sx={{ mr: 1, color: '#730a3d' }} />,
+                    startAdornment: <Person sx={{ mr: 1, color: 'primary.main' }} />,
                   }}
                 />
               </Grid>
@@ -191,7 +191,7 @@ const RegisterPage = () => {
                   value={formData.dateOfBirth}
                   onChange={handleChange}
                   InputProps={{
-                    startAdornment: <Cake sx={{ mr: 1, color: '#730a3d' }} />,
+                    startAdornment: <Cake sx={{ mr: 1, color: 'primary.main' }} />,
                   }}
                   InputLabelProps={{
                     shrink: true,
@@ -219,7 +219,7 @@ const RegisterPage = () => {
                   value={formData.education}
                   onChange={handleChange}
                   InputProps={{
-                    startAdornment: <School sx={{ mr: 1, color: '#730a3d' }} />,
+                    startAdornment: <School sx={{ mr: 1, color: 'primary.main' }} />,
                   }}
                 />
               </Grid>
@@ -232,7 +232,7 @@ const RegisterPage = () => {
                     value={formData.country}
                     onChange={handleChange}
                     label="Country"
-                    startAdornment={<Public sx={{ mr: 1, color: '#730a3d' }} />}
+                    startAdornment={<Public sx={{ mr: 1, color: 'primary.main' }} />}
                   >
                     {countries.map((country) => (
                       <MenuItem key={country} value={country}>{country}</MenuItem>
@@ -265,7 +265,7 @@ const RegisterPage = () => {
                     value={formData.city}
                     onChange={handleChange}
                     label="City"
-                    startAdornment={<LocationCity sx={{ mr: 1, color: '#730a3d' }} />}
+                    startAdornment={<LocationCity sx={{ mr: 1, color: 'primary.main' }} />}
                   >
                     {formData.state && cities[formData.state]?.map((city) => (
                       <MenuItem key={city} value={city}>{city}</MenuItem>
@@ -283,7 +283,7 @@ const RegisterPage = () => {
               sx={{
                 mt: 4,
                 mb: 2,
-                backgroundColor: '#730a3d',
+                backgroundColor: 'primary.main',
                 '&:hover': {
                   backgroundColor: '#5c082f',
                 },
@@ -295,7 +295,7 @@ const RegisterPage = () => {
             <Box sx={{ mt: 2, textAlign: 'center' }}>
               <Typography variant="body2" color="text.secondary">
                 Already have an account?{' '}
-                <Link href="/signin" variant="body2" underline="hover" sx={{ fontWeight: 600, color: '#730a3d' }}>
+                <Link href="/signin" variant="body2" underline="hover" sx={{ fontWeight: 600, color: 'primary.main' }}>
                   Sign In
                 </Link>
               </Typography>

@@ -89,7 +89,7 @@ const SignInPage = () => {
             alt="Company Logo"
           /> */}
           
-          <Typography component="h1" variant="h4" gutterBottom sx={{ fontWeight: 600, textAlign: 'center', color: '#730a3d' }}>
+          <Typography component="h1" variant="h4" gutterBottom sx={{ fontWeight: 600, textAlign: 'center', color: 'primary.main' }}>
             Welcome Back!
           </Typography>
           

@@ -73,7 +73,7 @@ const SearchSection = () => {
           variant="h2"
           align="center"
           sx={{
-            color: '#730a3d',
+            color: 'primary.main',
             fontWeight: 'bold',
             mb: 6,
             fontSize: { xs: '2rem', md: '3rem' },
@@ -98,15 +98,15 @@ const SearchSection = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search by name..."
                 InputProps={{
-                  startAdornment: <SearchIcon sx={{ color: '#730a3d', mr: 1 }} />,
+                  startAdornment: <SearchIcon sx={{ color: 'primary.main', mr: 1 }} />,
                 }}
                 sx={{
                   '& .MuiOutlinedInput-root': {
                     '&:hover fieldset': {
-                      borderColor: '#730a3d',
+                      borderColor: 'primary.main',
                     },
                     '&.Mui-focused fieldset': {
-                      borderColor: '#730a3d',
+                      borderColor: 'primary.main',
                     },
                   },
                 }}
@@ -121,7 +121,7 @@ const SearchSection = () => {
                   display: 'flex',
                   alignItems: 'center',
                   gap: 1,
-                  color: '#730a3d',
+                  color: 'primary.main',
                 }}
               >
                 <FilterListIcon />
@@ -145,9 +145,9 @@ const SearchSection = () => {
                     control={
                       <Radio 
                         sx={{
-                          color: '#730a3d',
+                          color: 'primary.main',
                           '&.Mui-checked': {
-                            color: '#730a3d',
+                            color: 'primary.main',
                           },
                         }}
                       />
@@ -159,9 +159,9 @@ const SearchSection = () => {
                     control={
                       <Radio 
                         sx={{
-                          color: '#730a3d',
+                          color: 'primary.main',
                           '&.Mui-checked': {
-                            color: '#730a3d',
+                            color: 'primary.main',
                           },
                         }}
                       />
@@ -184,7 +184,7 @@ const SearchSection = () => {
                 min={18}
                 max={60}
                 sx={{
-                  color: '#730a3d',
+                  color: 'primary.main',
                   '& .MuiSlider-thumb': {
                     '&:hover, &.Mui-focusVisible': {
                       boxShadow: '0 0 0 8px rgba(115, 10, 61, 0.16)',
@@ -210,10 +210,10 @@ const SearchSection = () => {
                     sx={{
                       '& .MuiOutlinedInput-root': {
                         '&:hover fieldset': {
-                          borderColor: '#730a3d',
+                          borderColor: 'primary.main',
                         },
                         '&.Mui-focused fieldset': {
-                          borderColor: '#730a3d',
+                          borderColor: 'primary.main',
                         },
                       },
                     }}
@@ -229,9 +229,9 @@ const SearchSection = () => {
                 size="large"
                 onClick={handleSearch}
                 sx={{
-                  bgcolor: '#730a3d',
+                  bgcolor: 'primary.main',
                   '&:hover': {
-                    bgcolor: '#4CAF50',
+                    bgcolor: 'primary.dark',
                   },
                   px: 6,
                   py: 1.5,
@@ -251,11 +251,11 @@ const SearchSection = () => {
           <Button 
             variant="outlined"
             sx={{ 
-              borderColor: '#730a3d',
-              color: '#730a3d',
+              borderColor: 'primary.main',
+              color: 'primary.main',
               '&:hover': {
-                borderColor: '#4CAF50',
-                bgcolor: '#4CAF50',
+                borderColor: 'primary.dark',
+                bgcolor: 'primary.dark',
                 color: 'white',
               },
             }}
@@ -265,11 +265,11 @@ const SearchSection = () => {
           <Button 
             variant="outlined"
             sx={{ 
-              borderColor: '#730a3d',
-              color: '#730a3d',
+              borderColor: 'primary.main',
+              color: 'primary.main',
               '&:hover': {
-                borderColor: '#4CAF50',
-                bgcolor: '#4CAF50',
+                borderColor: 'primary.dark',
+                bgcolor: 'primary.dark',
                 color: 'white',
               },
             }}
@@ -279,11 +279,11 @@ const SearchSection = () => {
           <Button 
             variant="outlined"
             sx={{ 
-              borderColor: '#730a3d',
-              color: '#730a3d',
+              borderColor: 'primary.main',
+              color: 'primary.main',
               '&:hover': {
-                borderColor: '#4CAF50',
-                bgcolor: '#4CAF50',
+                borderColor: 'primary.dark',
+                bgcolor: 'primary.dark',
                 color: 'white',
               },
             }}
