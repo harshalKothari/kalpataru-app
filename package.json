@@ -6,7 +6,7 @@
   "homepage": "https://harshalkothari.github.io/kalpataru-app/",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "npm run build && gh-pages -b master -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
