@@ -15,6 +15,7 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<LandingPage />} />
+            <Route path="/kalpataru-app" element={<LandingPage />} />
             <Route path="/signin" element={<SignInPage />} />
             <Route path="/signup" element={<RegisterPage />} />
             <Route path="/about" element={<AboutPage />} />
