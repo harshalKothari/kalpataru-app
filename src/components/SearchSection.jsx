@@ -5,7 +5,7 @@ import {
   Typography,
   TextField,
   Button,
-  Grid,
+  Grid2,
   MenuItem,
   FormControl,
   InputLabel,
@@ -89,9 +89,9 @@ const SearchSection = () => {
             borderRadius: 2,
           }}
         >
-          <Grid container spacing={3}>
+          <Grid2 container spacing={3}>
             {/* Main Search Bar */}
-            <Grid item xs={12}>
+            <Grid2 item xs={12}>
               <TextField
                 fullWidth
                 value={searchQuery}
@@ -111,10 +111,10 @@ const SearchSection = () => {
                   },
                 }}
               />
-            </Grid>
+            </Grid2>
 
             {/* Filters Header */}
-            <Grid item xs={12}>
+            <Grid2 item xs={12}>
               <Typography
                 variant="h6"
                 sx={{
@@ -127,10 +127,10 @@ const SearchSection = () => {
                 <FilterListIcon />
                 Filters
               </Typography>
-            </Grid>
+            </Grid2>
 
             {/* Gender Filter */}
-            <Grid item xs={12} md={4}>
+            <Grid2 item xs={12} md={4}>
               <FormControl component="fieldset">
                 <Typography variant="subtitle1" gutterBottom>
                   Gender
@@ -170,10 +170,10 @@ const SearchSection = () => {
                   />
                 </RadioGroup>
               </FormControl>
-            </Grid>
+            </Grid2>
 
             {/* Age Range Filter */}
-            <Grid item xs={12} md={4}>
+            <Grid2 item xs={12} md={4}>
               <Typography variant="subtitle1" gutterBottom>
                 Age Range: {age[0]} - {age[1]} years
               </Typography>
@@ -195,10 +195,10 @@ const SearchSection = () => {
                   },
                 }}
               />
-            </Grid>
+            </Grid2>
 
             {/* City Filter */}
-            <Grid item xs={12} md={4}>
+            <Grid2 item xs={12} md={4}>
               <Autocomplete
                 value={city}
                 onChange={(event, newValue) => setCity(newValue)}
@@ -220,10 +220,10 @@ const SearchSection = () => {
                   />
                 )}
               />
-            </Grid>
+            </Grid2>
 
             {/* Search Button */}
-            <Grid item xs={12} sx={{ textAlign: 'center' }}>
+            <Grid2 item xs={12} sx={{ textAlign: 'center' }}>
               <Button
                 variant="contained"
                 size="large"
@@ -242,8 +242,8 @@ const SearchSection = () => {
               >
                 Search
               </Button>
-            </Grid>
-          </Grid>
+            </Grid2>
+          </Grid2>
         </Paper>
 
         {/* Quick Filter Chips - Optional */}

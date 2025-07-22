@@ -168,7 +168,7 @@ const ResultsSection = ({ searchCriteria }) => {
                 <StyledTableCell align="center">Gender</StyledTableCell>
                 <StyledTableCell align="center">City</StyledTableCell>
                 <StyledTableCell align="center">Status</StyledTableCell>
-                <StyledTableCell align="center">Actions</StyledTableCell>
+                {/* <StyledTableCell align="center">Actions</Sty  ledTableCell> */}
               </TableRow>
             </TableHead>
             <TableBody>
@@ -191,7 +191,7 @@ const ResultsSection = ({ searchCriteria }) => {
                     <StyledTableCell align="center">{row.age}</StyledTableCell>
                     <StyledTableCell align="center">{row.gender}</StyledTableCell>
                     <StyledTableCell align="center">{row.city}</StyledTableCell>
-                    <StyledTableCell align="center">
+                    {/* <StyledTableCell align="center">
                       <Chip
                         label={row.isOnline ? 'Online' : 'Offline'}
                         sx={{
@@ -200,7 +200,7 @@ const ResultsSection = ({ searchCriteria }) => {
                         }}
                         size="small"
                       />
-                    </StyledTableCell>
+                    </StyledTableCell> */}
                     <StyledTableCell align="center">
                       <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
                         <IconButton
@@ -212,7 +212,7 @@ const ResultsSection = ({ searchCriteria }) => {
                         >
                           <VisibilityIcon />
                         </IconButton>
-                        <IconButton
+                        {/* <IconButton
                           onClick={() => handleSendMessage(row.id)}
                           sx={{ 
                             color: 'primary.main',
@@ -229,7 +229,7 @@ const ResultsSection = ({ searchCriteria }) => {
                           }}
                         >
                           <FavoriteIcon />
-                        </IconButton>
+                        </IconButton> */}
                       </Box>
                     </StyledTableCell>
                   </StyledTableRow>

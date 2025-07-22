@@ -3,9 +3,7 @@ import {
   Box, 
   Container, 
   Typography, 
-  Grid, 
-  TextField, 
-  Button, 
+  Grid2, 
   Paper 
 } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -32,37 +30,37 @@ const ContactPage = () => {
         >
           Contact Us
         </Typography>
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={6}>
+        <Grid2 container spacing={4}>
+          {/* <Grid2 size={12}>
             <Paper elevation={3} sx={{ p: 4 }}>
               <Typography variant="h5" gutterBottom sx={{ color: 'primary.main' }}>
                 Get in Touch
               </Typography>
               <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
-                <Grid container spacing={2}>
-                  <Grid item xs={12} sm={6}>
+                <Grid2 container spacing={2}>
+                  <Grid2 item xs={12} sm={6}>
                     <TextField
                       fullWidth
                       label="First Name"
                       required
                     />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
+                  </Grid2>
+                  <Grid2 item xs={12} sm={6}>
                     <TextField
                       fullWidth
                       label="Last Name"
                       required
                     />
-                  </Grid>
-                  <Grid item xs={12}>
+                  </Grid2>
+                  <Grid2 item xs={12}>
                     <TextField
                       fullWidth
                       label="Email"
                       type="email"
                       required
                     />
-                  </Grid>
-                  <Grid item xs={12}>
+                  </Grid2>
+                  <Grid2 item xs={12}>
                     <TextField
                       fullWidth
                       label="Message"
@@ -70,8 +68,8 @@ const ContactPage = () => {
                       rows={4}
                       required
                     />
-                  </Grid>
-                </Grid>
+                  </Grid2>
+                </Grid2>
                 <Button
                   type="submit"
                   fullWidth
@@ -89,9 +87,9 @@ const ContactPage = () => {
                 </Button>
               </Box>
             </Paper>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Paper elevation={3} sx={{ p: 4 }}>
+          </Grid2> */}
+          <Grid2 size={12}>
+            <Paper elevation={3} sx={{ p: 8 }}>
               <Typography variant="h5" gutterBottom sx={{ color: 'primary.main' }}>
                 Contact Information
               </Typography>
@@ -99,7 +97,7 @@ const ContactPage = () => {
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                   <LocationOnIcon sx={{ color: 'primary.main', mr: 2 }} />
                   <Typography>
-                    123 Business Street, Suite 100, City, Country
+                    17, Radha Mohan Colony, Khokadpura, Sambhaji Nagar
                   </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
@@ -111,13 +109,13 @@ const ContactPage = () => {
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                   <EmailIcon sx={{ color: 'primary.main', mr: 2 }} />
                   <Typography>
-                    contact@yourcompany.com
+                    support@kalpataru.com
                   </Typography>
                 </Box>
               </Box>
             </Paper>
-          </Grid>
-        </Grid>
+          </Grid2>
+        </Grid2>
       </Container>
     </Box>
   );

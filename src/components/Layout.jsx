@@ -13,6 +13,7 @@ const Layout = ({ children }) => {
       <Navbar />
       <Box sx={{ 
         flexGrow: 1,
+        display: 'flex',
         pt: { xs: '56px', sm: '64px' } // Compensate for navbar height
       }}>
         {children}

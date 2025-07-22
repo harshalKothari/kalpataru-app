@@ -42,8 +42,8 @@ const Navbar = () => {
   const navItems = [
     { name: 'About', path: '/about', icon: <InfoIcon /> },
     { name: 'Contact', path: '/contact', icon: <ContactMailIcon /> },
-    { name: 'Sign In', path: '/signin', icon: <LoginIcon /> },
-    { name: 'Sign Up', path: '/signup', icon: <PersonAddIcon /> },
+    // { name: 'Sign In', path: '/signin', icon: <LoginIcon /> },
+    // { name: 'Sign Up', path: '/signup', icon: <PersonAddIcon /> },
   ];
 
   const handleNavigation = (path) => {
@@ -54,6 +54,9 @@ const Navbar = () => {
   return (
     <AppBar 
       position="fixed" 
+      style={{ 
+        "background-image": isLandingPage && !isScrolled ? '' : "linear-gradient(to right, #BE5985, #B73A3A)"
+      }}
       sx={{
         bgcolor: isLandingPage && !isScrolled ? 'transparent' : 'primary.main',
         boxShadow: isLandingPage && !isScrolled ? 'none' : 1,
@@ -120,7 +123,7 @@ const Navbar = () => {
         PaperProps={{
           sx: {
             width: 250,
-            bgcolor: '#EA738D',
+            bgcolor: 'primary.dark',
             color: 'white'
           }
         }}

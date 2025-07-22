@@ -1,32 +1,53 @@
 import React from 'react';
 import { Box, Container, Typography, Button } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
-
+import { useNavigate } from 'react-router-dom';
+import one  from "../assets/one.jpg";
+import two  from "../assets/two.jpg";
+import three  from "../assets/three.jpg";
+import four  from "../assets/four.jpg";
+import five  from "../assets/five.jpg";
 const HeroSection = () => {
+  const navigate = useNavigate();
   const items = [
     {
       title: "Find Your Perfect Match",
       description: "Connect with like-minded individuals and start your journey",
-      image: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      image: one,
     },
     {
       title: "Discover Real Connections",
       description: "Build meaningful relationships that last a lifetime",
-      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      image: two,
     },
     {
-      title: "Begin Your Love Story",
+      title: "Begin Your Story",
       description: "Your happily ever after starts here",
-      image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      image: three,
+    },
+    {
+      title: "Meet your Soulmate",
+      description: "Where hearts meet, stories begin.",
+      image: four,
+    },
+    {
+      title: "Perfect Match",
+      description: "Your perfect match is waiting.",
+      image: five,
     }
   ];
+
+
+  const getStarted = () => {
+  navigate("/signup")
+};
 
   return (
     <Box 
       sx={{ 
         width: '100%',
               height: '100vh',
-        marginTop: { xs: '-56px', sm: '-64px' }, // Compensate for navbar height
+              marginTop: { xs: '-56px', sm: '-64px' }, // Compensate for navbar height
             }}
           >
       <Carousel
@@ -56,7 +77,7 @@ const HeroSection = () => {
         indicatorIconButtonProps={{
           style: {
             color: '#ffffff',
-            '&.Mui-selected': {
+            '&.MuiSelected': {
               color: 'primary.main'
             }
           }
@@ -99,9 +120,9 @@ const HeroSection = () => {
                   }}
                 >
                 <Typography
-                  variant="h1"
+                  variant="h2"
                   sx={{
-                    fontSize: { xs: '2.5rem', sm: '4rem', md: '5rem' },
+                    fontSize: { xs: '2.5rem', sm: '2rem', md: '3rem' },
                     fontWeight: 'bold',
                     mb: 2,
                     textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
@@ -121,7 +142,11 @@ const HeroSection = () => {
                 </Typography>
                 <Button
                   variant="contained"
+                  onClick={() => getStarted({ open: false, id: null })}
                   size="large"
+                    style={{ 
+                        "background-image": "linear-gradient(to right, #BE5985, #B73A3A)"
+                      }}
                   sx={{
                     bgcolor: 'primary.main',
                     '&:hover': {

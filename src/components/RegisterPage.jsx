@@ -11,7 +11,7 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  Grid,
+  Grid2,
   Divider,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -35,8 +35,8 @@ const cities = {
   Gujarat: ['Ahmedabad', 'Surat', 'Vadodara', 'Rajkot'],
 };
 
+
 const PageContainer = styled(Box)({
-  minHeight: '100vh',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -44,15 +44,19 @@ const PageContainer = styled(Box)({
 });
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
-  padding: theme.spacing(6),
+  padding: theme.spacing(2),
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
   borderRadius: '16px',
-  maxWidth: '800px',
-  width: '100%',
+  width: '80%',
   backgroundColor: '#ffffff',
+  maxWidth: '100vw',
+  maxHeight: '130%',
+  position: 'absolute',
+  transform: 'translate(0, -50%)',
+  // marginRight: '6%'
 }));
 
 const SocialButton = styled(Button)(({ theme }) => ({
@@ -106,33 +110,33 @@ const RegisterPage = () => {
   return (
     <PageContainer>
       <Container>
-        <StyledPaper elevation={3}>
-          <Typography component="h1" variant="h4" gutterBottom sx={{ fontWeight: 600, textAlign: 'center',color: 'primary.main' }}>
-            Create Your Profile
+        <StyledPaper elevation={5}>
+          <Typography component="h3" variant="h5" gutterBottom sx={{ fontWeight: 300,fontWeight: 'bold', textAlign: 'center',color: 'primary.main' }}>
+           REGISTER NEW MEMBER
           </Typography>
 
           <Typography variant="body1" color="text.secondary" sx={{ mb: 4, textAlign: 'center' }}>
             Join our community and find your perfect match
           </Typography>
 
-          <Grid container spacing={2} sx={{ mb: 3 }}>
-            <Grid item xs={12} sm={6}>
+          {/* <Grid2 container spacing={2} sx={{ mb: 3 }}>
+            <Grid2 item xs={12} sm={6}>
               <SocialButton startIcon={<Google sx={{ color: 'primary.main' }} />}>
                 Sign up with Google
               </SocialButton>
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </Grid2>
+            <Grid2 item xs={12} sm={6}>
               <SocialButton startIcon={<Facebook sx={{ color: 'primary.main' }} />}>
                 Sign up with Facebook
               </SocialButton>
-            </Grid>
-          </Grid>
+            </Grid2>
+          </Grid2> */}
 
-          <Divider sx={{ width: '100%', mb: 3 }}>or</Divider>
+          {/* <Divider sx={{ width: '100%', mb: 3 }}>or</Divider> */}
 
           <Box component="form" onSubmit={handleSubmit} sx={{ width: '100%' }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={4}>
+            <Grid2 container spacing={2}>
+              <Grid2 size={4}>
                 <TextField
                   required
                   fullWidth
@@ -144,8 +148,8 @@ const RegisterPage = () => {
                     startAdornment: <Person sx={{ mr: 1, color: 'primary.main' }} />,
                   }}
                 />
-              </Grid>
-              <Grid item xs={12} sm={4}>
+              </Grid2>
+              <Grid2 size={4}>
                 <TextField
                   fullWidth
                   label="Middle Name"
@@ -153,8 +157,8 @@ const RegisterPage = () => {
                   value={formData.middleName}
                   onChange={handleChange}
                 />
-              </Grid>
-              <Grid item xs={12} sm={4}>
+              </Grid2>
+              <Grid2 size={4}>
                 <TextField
                   required
                   fullWidth
@@ -163,9 +167,9 @@ const RegisterPage = () => {
                   value={formData.lastName}
                   onChange={handleChange}
                 />
-              </Grid>
+              </Grid2>
 
-              <Grid item xs={12} sm={6}>
+              <Grid2 size={4}>
                 <FormControl fullWidth required>
                   <InputLabel>Gender</InputLabel>
                   <Select
@@ -176,12 +180,11 @@ const RegisterPage = () => {
                   >
                     <MenuItem value="male">Male</MenuItem>
                     <MenuItem value="female">Female</MenuItem>
-                    <MenuItem value="other">Other</MenuItem>
                   </Select>
                 </FormControl>
-              </Grid>
+              </Grid2>
 
-              <Grid item xs={12} sm={6}>
+              <Grid2 size={4}>
                 <TextField
                   required
                   fullWidth
@@ -197,9 +200,9 @@ const RegisterPage = () => {
                     shrink: true,
                   }}
                 />
-              </Grid>
+              </Grid2>
 
-              <Grid item xs={12} sm={6}>
+              {/* <Grid2 item xs={12} sm={6}>
                 <TextField
                   required
                   fullWidth
@@ -208,9 +211,9 @@ const RegisterPage = () => {
                   value={formData.religion}
                   onChange={handleChange}
                 />
-              </Grid>
+              </Grid2> */}
 
-              <Grid item xs={12} sm={6}>
+              <Grid2 item xs={12} sm={6}>
                 <TextField
                   required
                   fullWidth
@@ -222,9 +225,9 @@ const RegisterPage = () => {
                     startAdornment: <School sx={{ mr: 1, color: 'primary.main' }} />,
                   }}
                 />
-              </Grid>
+              </Grid2>
 
-              <Grid item xs={12} sm={4}>
+              <Grid2 size={4}>
                 <FormControl fullWidth required>
                   <InputLabel>Country</InputLabel>
                   <Select
@@ -239,9 +242,9 @@ const RegisterPage = () => {
                     ))}
                   </Select>
                 </FormControl>
-              </Grid>
+              </Grid2>
 
-              <Grid item xs={12} sm={4}>
+              <Grid2 size={4}>
                 <FormControl fullWidth required disabled={!formData.country}>
                   <InputLabel>State</InputLabel>
                   <Select
@@ -255,9 +258,9 @@ const RegisterPage = () => {
                     ))}
                   </Select>
                 </FormControl>
-              </Grid>
+              </Grid2>
 
-              <Grid item xs={12} sm={4}>
+              <Grid2 size={4}>
                 <FormControl fullWidth required disabled={!formData.state}>
                   <InputLabel>City</InputLabel>
                   <Select
@@ -272,14 +275,17 @@ const RegisterPage = () => {
                     ))}
                   </Select>
                 </FormControl>
-              </Grid>
-            </Grid>
+              </Grid2>
+            </Grid2>
 
             <Button
               type="submit"
               fullWidth
               variant="contained"
               size="large"
+              style={{ 
+                        "background-image": "linear-gradient(to right, #BE5985, #B73A3A)"
+                      }}
               sx={{
                 mt: 4,
                 mb: 2,

@@ -6,17 +6,16 @@ import {
   Typography,
   TextField,
   Button,
-  Checkbox,
-  FormControlLabel,
   Link,
-  Divider,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import {
   Email,
-  Lock,
-  Google,
+  Lock
 } from '@mui/icons-material';
+
+import { useNavigate } from 'react-router-dom';
+import { login } from '../api/authService.js';
 
 // Styled components
 const PageContainer = styled(Box)({
@@ -24,18 +23,22 @@ const PageContainer = styled(Box)({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  padding: '20px',
+position: 'absolute',
+top: '50%',
+left: '25%',
+transform: 'translate(0, -50%)',
+overflowY: 'auto'
 });
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
-  padding: theme.spacing(6),
+  padding: theme.spacing(2),
             display: 'flex', 
   flexDirection: 'column',
             alignItems: 'center',
   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
   borderRadius: '16px',
-  maxWidth: '450px',
-  width: '100%',
+  // maxWidth: '450px',
+  // width: '100%',
   backgroundColor: '#ffffff',
 }));
 
@@ -73,22 +76,32 @@ const SignInButton = styled(Button)(({ theme }) => ({
 const SignInPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
+  // const [rememberMe, setRememberMe] = useState(false);
+  const navigate = useNavigate();
+  const [message, setMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleLogin = async(e) => {
     e.preventDefault();
-    console.log('Sign in attempt:', { email, password, rememberMe });
+    
+    try {
+      const res = await login(email, password);
+      const isAdmin = res && res.isAdmin;
+  
+      if(isAdmin){
+        navigate("/menu-master");
+      }else{
+        navigate("/cost-sheet");
+      }
+      
+    } catch (error) {
+        setMessage(error.response?.data?.message || error.message || 'Something went wrong.'); // validation error message
+    }
 };
 
   return (
     <PageContainer>
       <Container maxWidth="sm" sx={{ margin: 0 }}>
-        <StyledPaper elevation={3}>
-          {/* <Logo
-            src="/company-logo.png"
-            alt="Company Logo"
-          /> */}
-          
+        <StyledPaper elevation={3}>          
           <Typography component="h1" variant="h4" gutterBottom sx={{ fontWeight: 600, textAlign: 'center', color: 'primary.main' }}>
             Welcome Back!
           </Typography>
@@ -97,7 +110,11 @@ const SignInPage = () => {
             Please enter your details to access your account
           </Typography>
 
-          <Box component="form" onSubmit={handleSubmit} sx={{ width: '100%' }}>
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 4, textAlign: 'center', color: 'primary.main' }}>
+          {message && <p>{message}</p>}
+          </Typography>
+
+          <Box component="form" onSubmit={handleLogin} sx={{ width: '100%' }}>
             {/* <GoogleButton
               fullWidth
               variant="outlined"
@@ -143,7 +160,7 @@ const SignInPage = () => {
               alignItems: 'center',
               mt: 2 
             }}>
-              <FormControlLabel
+              {/* <FormControlLabel
                 control={
                   <Checkbox
                     checked={rememberMe}
@@ -152,8 +169,8 @@ const SignInPage = () => {
                   />
                 }
                 label="Remember me"
-              />
-              <Link href="#" variant="body2" underline="hover" sx={{ color: 'primary.main' }}>
+              /> */}
+              <Link href="/forgot-password" variant="body2" underline="hover" sx={{ color: 'primary.main' }}>
                 Forgot Password?
               </Link>
             </Box>
@@ -167,14 +184,14 @@ const SignInPage = () => {
               Sign In
             </SignInButton>
 
-            <Box sx={{ mt: 3, textAlign: 'center' }}>
+            {/* <Box sx={{ mt: 3, textAlign: 'center' }}>
               <Typography variant="body2" color="text.secondary">
                 Don't have an account?{' '}
                 <Link href="register" variant="body2" underline="hover" sx={{ fontWeight: 600 }}>
                   Sign Up Now
                 </Link>
               </Typography>
-            </Box>
+            </Box> */}
           </Box>
         </StyledPaper>
       </Container>

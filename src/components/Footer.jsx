@@ -2,7 +2,7 @@ import React from 'react';
 import { 
   Box, 
   Container, 
-  Grid, 
+  Grid2, 
   Typography, 
   TextField, 
   Button,
@@ -18,11 +18,11 @@ const Footer = () => {
   const theme = useTheme();
   const currentYear = new Date().getFullYear();
 
-  const handleEmailSubmit = (e) => {
-    e.preventDefault();
-    // Handle email submission logic here
-    console.log('Email submitted');
-  };
+  // const handleEmailSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Handle email submission logic here
+  //   console.log('Email submitted');
+  // };
 
   return (
     <Box
@@ -35,9 +35,9 @@ const Footer = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={4}>
+        <Grid2 container spacing={4}>
           {/* Company Description */}
-          <Grid item xs={12} md={4}>
+          <Grid2 size={8}>
             <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
               About Our Company
             </Typography>
@@ -49,25 +49,25 @@ const Footer = () => {
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
               <LocationOnIcon sx={{ mr: 1, fontSize: '1.2rem' }} />
               <Typography variant="body2">
-                123 Business Street, Suite 100, City, Country
+              17, Radha Mohan Colony, Khokadpura, Sambhaji Nagar
               </Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
               <PhoneIcon sx={{ mr: 1, fontSize: '1.2rem' }} />
               <Typography variant="body2">
-                +1 234 567 8900
+                +91 9890009911
               </Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
               <EmailIcon sx={{ mr: 1, fontSize: '1.2rem' }} />
               <Typography variant="body2">
-                contact@yourcompany.com
+                support@kalpataru.com
               </Typography>
             </Box>
-          </Grid>
+          </Grid2>
 
           {/* Quick Links */}
-          <Grid item xs={12} md={4}>
+          <Grid2 size='grow'>
             <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
               Quick Links
             </Typography>
@@ -80,16 +80,16 @@ const Footer = () => {
             <Link href="/contact" color="inherit" sx={{ display: 'block', mb: 1 }}>
               Contact
             </Link>
-            <Link href="/signin" color="inherit" sx={{ display: 'block', mb: 1 }}>
+            {/* <Link href="/signin" color="inherit" sx={{ display: 'block', mb: 1 }}>
               Sign In
             </Link>
             <Link href="/signup" color="inherit" sx={{ display: 'block' }}>
               Sign Up
-            </Link>
-          </Grid>
+            </Link> */}
+          </Grid2>
 
           {/* Email Inquiry Section */}
-          <Grid item xs={12} md={4}>
+          {/* <Grid2 item xs={12} md={4}>
             <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
               Stay Connected
             </Typography>
@@ -133,8 +133,8 @@ const Footer = () => {
                 Subscribe
               </Button>
             </Box>
-          </Grid>
-        </Grid>
+          </Grid2> */}
+        </Grid2>
 
         <Divider sx={{ my: 4, bgcolor: 'primary.main' }} />
         

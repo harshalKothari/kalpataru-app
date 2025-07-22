@@ -24,9 +24,9 @@ const LandingPage = () => {
         position: 'absolute',
       }}>
         <HeroSection />
-        <SuccessStories />
-        <SearchSection onSearch={handleSearchComplete} />
-        <ResultsSection onSearch={handleSearchComplete} />
+        {/* <SuccessStories /> */}
+        {/* <SearchSection onSearch={handleSearchComplete} />
+        <ResultsSection onSearch={handleSearchComplete} /> */}
         <Footer />
         {showResults && <ResultsSection searchCriteria={searchCriteria} />}
       </Box>
