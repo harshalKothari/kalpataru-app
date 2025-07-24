@@ -39,7 +39,7 @@ const HeroSection = () => {
 
 
   const getStarted = () => {
-  navigate("/signup")
+  navigate("/kalpataru-app/signin")
 };
 
   return (
@@ -101,7 +101,7 @@ const HeroSection = () => {
             <Container maxWidth="lg">
               <Box
                 sx={{
-                  color: 'white',
+                  color: 'secondary.light',
                   textAlign: 'center',
                   maxWidth: '800px',
                   margin: '0 auto',
@@ -144,14 +144,13 @@ const HeroSection = () => {
                   variant="contained"
                   onClick={() => getStarted({ open: false, id: null })}
                   size="large"
-                    style={{ 
-                        "background-image": "linear-gradient(to right, #BE5985, #B73A3A)"
-                      }}
                   sx={{
                     bgcolor: 'primary.main',
                     '&:hover': {
                       bgcolor: 'primary.dark',
+                      color: 'primary.light'
                     },
+                    color: 'primary.light',
                     px: 4,
                     py: 1.5,
                     transition: 'all 0.3s ease',
@@ -160,6 +159,7 @@ const HeroSection = () => {
                 >
                   Get Started
                 </Button>
+                
     </Box>
             </Container>
           </Box>

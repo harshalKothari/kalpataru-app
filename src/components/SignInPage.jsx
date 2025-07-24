@@ -42,10 +42,6 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
   backgroundColor: '#ffffff',
 }));
 
-const Logo = styled('img')({
-  width: '180px',
-  marginBottom: '24px',
-});
 
 // const GoogleButton = styled(Button)(({ theme }) => ({
 //   marginBottom: theme.spacing(3),
@@ -64,7 +60,7 @@ const SignInButton = styled(Button)(({ theme }) => ({
   marginTop: theme.spacing(2),
   padding: theme.spacing(1.5),
   backgroundColor: theme.palette.primary.main,
-  color: '#ffffff',
+  color: theme.palette.primary.light,
   fontWeight: 600,
   boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
   '&:hover': {
@@ -86,11 +82,12 @@ const SignInPage = () => {
     try {
       const res = await login(email, password);
       const isAdmin = res && res.isAdmin;
-  
+      const isUser = res && res.isUser;
+      console.log(isUser)
       if(isAdmin){
-        navigate("/menu-master");
-      }else{
-        navigate("/cost-sheet");
+        navigate("/kalpataru-app/signup");
+      }else if(isUser){
+        navigate("/kalpataru-app/about");
       }
       
     } catch (error) {
@@ -170,15 +167,15 @@ const SignInPage = () => {
                 }
                 label="Remember me"
               /> */}
-              <Link href="/forgot-password" variant="body2" underline="hover" sx={{ color: 'primary.main' }}>
+              {/* <Link href="/kalpataru-app/forgot-password" variant="body2" underline="hover" sx={{ color: 'primary.main' }}>
                 Forgot Password?
-              </Link>
+              </Link> */}
             </Box>
 
             <SignInButton
               type="submit"
               fullWidth
-              variant="contained"
+              variant="outlined"
               size="large"
             >
               Sign In

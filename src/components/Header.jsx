@@ -67,7 +67,7 @@ const Header = () => {
           to="/"
           sx={{
             flexGrow: 1,
-            color: 'white',
+            color: 'secondary.light',
             textDecoration: 'none',
             fontWeight: 700,
           }}

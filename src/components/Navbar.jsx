@@ -17,7 +17,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import LoginIcon from '@mui/icons-material/Login';
+import Logout from '@mui/icons-material/Logout';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
@@ -25,8 +27,11 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const isLandingPage = location.pathname === '/';
-
+  const isLandingPage = location.pathname === '/kalpataru-app/' || location.pathname === '/kalpataru-app';
+  const isSignInPage = location.pathname === '/kalpataru-app/signin/' || location.pathname === '/kalpataru-app/signin';
+  
+  console.log("?/////////", isSignInPage);
+  
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -40,10 +45,12 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: 'About', path: '/about', icon: <InfoIcon /> },
-    { name: 'Contact', path: '/contact', icon: <ContactMailIcon /> },
-    // { name: 'Sign In', path: '/signin', icon: <LoginIcon /> },
-    // { name: 'Sign Up', path: '/signup', icon: <PersonAddIcon /> },
+    // { name: 'Sign In', path: '/kalpataru-app/signin', icon: <LoginIcon /> },
+    { name: 'Dashboard', path: '/kalpataru-app/user-dashboard', icon: <DashboardIcon /> },
+     { name: 'Create Profile', path: '/kalpataru-app/signup', icon: <PersonAddIcon /> },
+    { name: 'About', path: '/kalpataru-app/about', icon: <InfoIcon /> },
+     { name: 'Contact', path: '/kalpataru-app/contact', icon: <ContactMailIcon /> },
+     { name: 'Logout', path: '/', icon: <Logout /> },
   ];
 
   const handleNavigation = (path) => {
@@ -54,31 +61,32 @@ const Navbar = () => {
   return (
     <AppBar 
       position="fixed" 
-      style={{ 
-        "background-image": isLandingPage && !isScrolled ? '' : "linear-gradient(to right, #BE5985, #B73A3A)"
-      }}
       sx={{
-        bgcolor: isLandingPage && !isScrolled ? 'transparent' : 'primary.main',
+        bgcolor: isLandingPage && !isScrolled ? 'transparent' :  isLandingPage ? 'transparent' : 'primary.light',
         boxShadow: isLandingPage && !isScrolled ? 'none' : 1,
         transition: 'all 0.3s ease',
       }}
     >
+     {  (!isSignInPage)?
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
             variant="h6"
             sx={{
+              fontFamily: 'Dancing Script, cursive',
+              fontOpticalSizing: 'auto',
+              fontStyle: 'normal',
               flexGrow: { xs: 1, md: 0 },
-              color: 'white',
+              color: 'secondary.dark',
               fontWeight: 700,
               cursor: 'pointer',
               mr: 3
             }}
-            onClick={() => handleNavigation('/')}
+            onClick={() => handleNavigation('/kalpataru-app/user-dashboard')}
           >
-            Kalpataru
+            <i>Kalpataru logo</i>
           </Typography>
-
+           
           <Box sx={{ 
             flexGrow: 1, 
             display: { xs: 'none', md: 'flex' },
@@ -90,7 +98,7 @@ const Navbar = () => {
                 onClick={() => handleNavigation(item.path)}
                 startIcon={item.icon}
                 sx={{
-                  color: 'white',
+                  color: isLandingPage && !isScrolled ? 'primary.light' : isLandingPage ? 'primary.light' : 'primary.main',
                   mx: 1,
                   px: 2,
                   '&:hover': {
@@ -102,8 +110,7 @@ const Navbar = () => {
                 {item.name}
               </Button>
             ))}
-          </Box>
-
+          </Box> 
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -115,6 +122,7 @@ const Navbar = () => {
           </IconButton>
         </Toolbar>
       </Container>
+: null}
 
       <Drawer
         anchor="right"
@@ -124,7 +132,7 @@ const Navbar = () => {
           sx: {
             width: 250,
             bgcolor: 'primary.dark',
-            color: 'white'
+            color: 'secondary.light'
           }
         }}
       >
